@@ -49,7 +49,7 @@ html {
 body {
    margin: 0;
    padding: 0;
-   background-color: var(--Light-Grayish-Violet);
+   background-color: var(--White);
    font-family: 'Rubik', sans-serif;
    font-size: 1rem;
 }
@@ -73,6 +73,20 @@ main {
    border-radius: 0 0 230px 230px;
    z-index: -1;
    animation: .8s FadeBigger ease-in;
+}
+
+.gradient-background1 {
+   display: inline-block;
+   visibility: visible;
+   position: fixed;
+   width: 390px;
+   height: 78vh;
+   bottom: 0;
+   left: 50vw;
+   background: var(--Light-Grayish-Violet);
+   border-radius: 230px 230px 0 0;
+   z-index: -1;
+   animation: .8s FadeBiggerUpper ease-in;
 }
 
 .phone {
@@ -478,6 +492,16 @@ footer .attribution a:hover {
    }
 }
 
+@keyframes FadeBiggerUpper {
+   0% {
+      transform: scaleY(0) translateY(400vh) translateZ(50px);
+      opacity: 0;
+   }
+   20% {
+      opacity: 0;
+   }
+}
+
 
 @media screen and (min-width: 800px) {
 
@@ -485,6 +509,12 @@ footer .attribution a:hover {
       width: 30vw;
       height: 88vh;
       right: 76vw;
+   }
+
+   .gradient-background1 {
+      width: 30vw;
+      height: 88vh;
+      left: 76vw;
    }
 
    main {
