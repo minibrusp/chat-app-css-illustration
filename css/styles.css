@@ -171,7 +171,7 @@ main {
    border-radius: 50%;
    border: 1.5px solid white;
    cursor: pointer;
-   opacity: 0.9;
+   opacity: 1;
    display: block;
    transition: .3s transform;
 }
@@ -180,6 +180,7 @@ main {
    transform: scale(5) translateX(10px) translateY(10px);
    border: none;
    z-index: 3;
+   position: absolute;
 }
 
 .header-content .text .name {
@@ -244,14 +245,13 @@ main {
 .reply { 
    color: var(--Moderate-Violet);
    background-color: hsl(210deg, 17%, 91%);
-   /* filter: brightness(1.15); */
    margin-left: 4px;
    border-bottom-left-radius: 0px;
    transition: .3s transform;
 }
 
 .reply:hover {
-   transform: scale(1.1) translateX(5px);
+   transform: scale(1.1) translateX(2px);
 }
 
 .pics {
@@ -259,10 +259,14 @@ main {
    justify-content: flex-end;
    align-items: center;
    margin-bottom: 8px;
+   position: relative;
+   top: 0;
+   z-index: 3;
 }
 
 .pics img {
    width: 60px;
+   position: relative;
    border-radius: 25%;
    padding: 5px 7px;
    cursor: pointer;
@@ -275,16 +279,19 @@ main {
 }
 
 .pics img:nth-child(1):active {
-   transform: scale(3) translateX(5px);
+   transform: scale(3) translateX(-30px);
+   position: absolute;
+   z-index: 3;
 }
 .pics img:nth-child(2):active {
-   transform: scale(3) translateX(-10px);
+   transform: scale(3) translateX(-30px);
+   position: absolute;
 }
 .pics img:nth-child(3):active {
    transform: scale(3) translateX(-25px);
-
-
+   position: absolute;
 }
+
 
 .user {
    max-width: 70%;
@@ -298,7 +305,7 @@ main {
 }
 
 .user:hover {
-   transform: scale(1.1) translateX(-5px);
+   transform: scale(1.1) translateX(-2px);
 }
 
 .user:nth-of-type(5) {
@@ -324,7 +331,7 @@ main {
 }
 
 .offer:hover {
-   transform: scale(1.1) translateX(7px);
+   transform: scale(1.1) translateX(2px);
 }
 
 
@@ -522,6 +529,16 @@ footer .attribution a:hover {
    to {
       opacity: 0;
       z-index: -1;
+      display: none;
+   }
+}
+
+@keyframes toFadeIn {
+   from {
+      opacity: 0;
+   }
+   to {
+      opacity: 1;
    }
 }
 
@@ -558,34 +575,42 @@ footer .attribution a:hover {
 
 
 .chat.reply:nth-child(1) {
-   animation: 1s smalltoBig 1.8s forwards;
+   animation: 1s smalltoBig 1.8s,
+               1s toFadeIn 1.8s forwards;
 }
 .chat.reply:nth-child(2) {
-   animation: 1s smalltoBig 2.7s forwards;
+   animation: 1s smalltoBig 2.7s,
+               1s toFadeIn 2.7s forwards;
 }
 
 .pics:nth-child(3) {
-   animation: 1s smalltoBig 3.6s forwards;
+   animation: 1s smalltoBig 3.6s,
+               1s toFadeIn 3.6s forwards;
 }
 
 .chat.user:nth-child(4) {
-   animation: 1s smalltoBig 4.5s forwards;
+   animation: 1s smalltoBig 4.5s,
+               1s toFadeIn 4.5s forwards;
 }
 
 .chat.user:nth-child(5) {
-   animation: 1s smalltoBig 5.4s forwards;
+   animation: 1s smalltoBig 5.4s,
+               1s toFadeIn 5.4s forwards;
 }
 
 .chat.reply:nth-child(6) {
-   animation: 1s smalltoBig 6.3s forwards;
+   animation: 1s smalltoBig 6.3s,
+               1s toFadeIn 6.3s forwards;
 }
 
 .offer:nth-child(7) {
-   animation: 1s smalltoBig 7.2s forwards;
+   animation: 1s smalltoBig 7.2s,
+               1s toFadeIn 7.2s forwards;
 }
 
 .offer:nth-child(8) {
-   animation: 1s smalltoBig 8.1s forwards;
+   animation: 1s smalltoBig 8.1s,
+               1s toFadeIn 8.1s forwards;
 }
 
 
