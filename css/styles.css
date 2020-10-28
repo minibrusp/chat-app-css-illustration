@@ -89,8 +89,6 @@ main {
    animation: .8s BiggerRotateFade ease-in;
 }
 
-
-
 .phone .header {
    height: 70px;
    background: linear-gradient(to right, hsl(264, 100%, 61%), hsl(293, 100%, 63%));
@@ -159,6 +157,13 @@ main {
    border: 1.5px solid white;
    cursor: pointer;
    opacity: 0.9;
+   display: block;
+   transition: .3s transform;
+}
+
+.header-content .avatar img:active {
+   transform: scale(5) translateX(10px) translateY(10px);
+   border: none;
 }
 
 .header-content .text .name {
@@ -170,7 +175,6 @@ main {
 .header-content .text .status {
    font-size: 0.5rem;
    color: var(--Grayish-Blue);
-   opacity: 0.9;
 }
 
 .header-content .dots {
@@ -223,8 +227,8 @@ main {
 
 .reply { 
    color: var(--Moderate-Violet);
-   background-color: var(--Grayish-Blue);
-   filter: brightness(1.15);
+   background-color: hsl(210deg, 17%, 91%);
+   /* filter: brightness(1.15); */
    margin-left: 4px;
    border-bottom-left-radius: 0px;
    transition: .3s transform;
@@ -251,6 +255,16 @@ main {
 
 .pics img:hover {
    transform: scale(1.1);
+}
+
+.pics img:nth-child(1):active {
+   transform: scale(3) translateX(5px);
+}
+.pics img:nth-child(2):active {
+   transform: scale(3) translateX(-10px);
+}
+.pics img:nth-child(3):active {
+   transform: scale(3) translateX(-25px);
 }
 
 .user {
@@ -309,7 +323,7 @@ main {
    border-radius: 50%;
    border: 2px solid white;
    margin-right: 10px;
-   opacity: 0.6;
+   opacity: 0.3;
 }
 
 .offer p {
@@ -345,23 +359,24 @@ form input[type='text'] {
 form .arrow {
    
    color: #ffff;
-   display: inline-flex;
-   justify-content: center;
-   align-items: center;
    position: absolute;
-   bottom: 38%;
-   right: 9%;
+   bottom: 28%;
+   right: 3%;
    cursor: pointer;
-}
-
-form .arrow span {
-   position: absolute;
-   padding: 0px 8px 0 8px;
+   text-align: center;
+   padding: 0px 7px 0 9px;
    height: 26px;
    font-size: 21px;
    background-color: var(--Very-Dark-Desaturated-Violet);
    border-radius: 50%;
+   border: none;
+   outline: none;
 }
+
+form .arrow:active {
+   transform: scale(.9);
+}
+
 
 section.promo-text {
    margin: 50px auto;
