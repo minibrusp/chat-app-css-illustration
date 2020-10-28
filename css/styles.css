@@ -255,6 +255,7 @@ main {
 
 .pics img:hover {
    transform: scale(1.1);
+
 }
 
 .pics img:nth-child(1):active {
@@ -265,6 +266,8 @@ main {
 }
 .pics img:nth-child(3):active {
    transform: scale(3) translateX(-25px);
+
+
 }
 
 .user {
